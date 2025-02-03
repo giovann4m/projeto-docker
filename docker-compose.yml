@@ -1,0 +1,28 @@
+#version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=postgresql
+      - DB_USER=giovann4m
+      - DB_PASSWORD=admin123
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: giovann4m
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: postgresql
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
