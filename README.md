@@ -18,12 +18,12 @@ git --version
 ## 🚀 Como rodar o projeto
 
 1. **Clone o repositório:**
-   ````bash
+   ```
    git clone https://github.com/giovann4m/projeto-docker.git <br>
    cd projeto-docker
    
 3. **Suba os contêineres com Docker Compose:**
-   ```bash
+   ```
    docker compose up
    ```
 4. **Acesse o backend:**
@@ -33,20 +33,21 @@ git --version
 ## 📂 Estrutura do Projeto
 
 ```
-projeto-docker/
-│── backend/
-│   ├── app.py               # Código principal da API Flask
-│   ├── database.py          # Configuração da conexão com o banco de dados
-│   ├── Dockerfile           # Configuração do container do backend
-│   ├── requirements.txt     # Dependências do projeto
-│── docker-compose.yml       # Orquestração dos contêineres
-│── README.md                # Documentação do projeto
-│── .venv/                   # Ambiente virtual (se aplicável)
+projeto-dcoker/
+   backend/
+      app.py            #Código principal da API Flask
+      database.py       #Configuração da conexão com o banco de dados     
+      Dockerfile        #Configuração do container do backend
+      requirements.txt  #Dependências do projeto
+docker-compose.yml      #Orquestração dos containers
+README.md               #Documentação do Projeto
+.venv/                  #Ambiente virtual
+
 ```
 
-## ⚠️ Possíveis Problemas e Soluções
+## Possíveis Problemas e Soluções
 
-### 🔴 Erro: **"Port 5000 already in use"**
+### Erro: **"Port 5000 already in use"**
 **Causa:** Outra aplicação já está rodando na porta 5000.
 **Solução:**
 ```bash
@@ -59,7 +60,7 @@ ports:
   - "5001:5000"  # Mude a porta externa para 5001
 ```
 
-### 🔴 Erro: **"Cannot connect to the Docker daemon"**
+### Erro: **"Cannot connect to the Docker daemon"**
 **Causa:** O Docker pode não estar rodando.
 **Solução:**
 - Verifique se o Docker Desktop está aberto.
@@ -68,7 +69,7 @@ ports:
   sudo systemctl start docker
   ```
 
-### 🔴 Erro: **"Database connection failed"** ao acessar `http://localhost:5000/db-test`
+### Erro: **"Database connection failed"** ao acessar `http://localhost:5000/db-test`
 **Causa:** O backend pode estar tentando conectar ao banco antes que ele esteja pronto.
 **Solução:**
 - Derrube e suba os contêineres novamente:
@@ -80,7 +81,7 @@ ports:
   docker compose logs db
   ```
 
-### 🔴 Erro: **"User identity unknown" no Git**
+### Erro: **"User identity unknown" no Git**
 **Causa:** O Git não tem seu usuário configurado.
 **Solução:**
 ```bash
@@ -88,7 +89,7 @@ git config --global user.name "Seu Nome"
 git config --global user.email "seuemail@example.com"
 ```
 
-### 🔴 Erro: **"Updates were rejected because the remote contains work that you do not have locally"**
+### Erro: **"Updates were rejected because the remote contains work that you do not have locally"**
 **Causa:** O repositório remoto tem alterações que você ainda não baixou.
 **Solução:**
 ```bash
