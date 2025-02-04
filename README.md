@@ -1,11 +1,9 @@
-<<<<<<< HEAD
-=======
-#🐳Projeto Docker
+# 🐳Projeto Docker
 
 Este projeto contém um backend simples em Flask rodando em um contêiner Docker e um banco de dados PostgreSQL 
 gerenciado pelo Docker Compose.
 
-#📌 Pré-requisitos
+# 📌 Pré-requisitos
 Antes de começar, certifique-se de ter instalado:
 - Docker Desktop e Docker Compose
 - Python
@@ -20,7 +18,7 @@ python --version
 git --version
 ```
 
-#🚀 Como rodar o projeto
+# 🚀 Como rodar o projeto
 
 1. Clone o repositório:
 
@@ -37,7 +35,7 @@ git --version
    - [http://localhost:5000]
    - Teste a conexão com o banco: [http://localhost:5000/db-test]
 
-#📂 Estrutura do Projeto
+# 📂 Estrutura do Projeto
 
 ```
 projeto-dcoker/
@@ -52,9 +50,9 @@ README.md               #Documentação do Projeto
 
 ```
 
-#⚠️ Possíveis Problemas e Soluções
+# ⚠️ Possíveis Problemas e Soluções
 
-Erro: "Port 5000 already in use"
+## Erro: **"Port 5000 already in use"**
 Causa: Outra aplicação já está rodando na porta 5000.
 Solução:
 ```
@@ -67,7 +65,7 @@ ports:
   - "5001:5000"  #Mude a porta externa para 5001
 ```
 
-#Erro: "Cannot connect to the Docker daemon"
+## Erro: **"Cannot connect to the Docker daemon"**
 Causa: O Docker pode não estar rodando.
 Solução:
 - Verifique se o Docker Desktop está aberto.
@@ -76,7 +74,7 @@ Solução:
   sudo systemctl start docker
   ```
 
-#Erro: "Database connection failed" ao acessar `http://localhost:5000/db-test`
+## Erro: **"Database connection failed" ao acessar `http://localhost:5000/db-test`**
 Causa: O backend pode estar tentando conectar ao banco antes que ele esteja pronto.
 Solução:
 - Derrube e suba os contêineres novamente:
@@ -88,7 +86,7 @@ Solução:
   docker compose logs db
   ```
 
-#Erro: "User identity unknown" no Git
+## Erro: **"User identity unknown" no Git**
 Causa: O Git não tem seu usuário configurado.
 Solução:
 ```
@@ -96,7 +94,7 @@ git config --global user.name "Seu Nome"
 git config --global user.email "seuemail@example.com"
 ```
 
-#📌 Envio para o Docker Hub
+# 📌 Envio para o Docker Hub
 Para enviar sua imagem Docker ao Docker Hub:
 
 1. Faça login no Docker Hub:
@@ -120,4 +118,3 @@ Para enviar sua imagem Docker ao Docker Hub:
 ```
 docker compose logs
 ```
->>>>>>> 3cc1471 (Primeira versão do projeto)
