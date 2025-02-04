@@ -1,4 +1,4 @@
-# 🐳Projeto Docker
+# 🐳 Projeto Docker
 
 Este projeto contém um backend simples em Flask rodando em um contêiner Docker e um banco de dados PostgreSQL 
 gerenciado pelo Docker Compose.
